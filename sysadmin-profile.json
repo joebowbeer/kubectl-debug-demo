@@ -1,0 +1,12 @@
+{
+  "securityContext": {
+    "runAsNonRoot": false
+  },
+  "volumeMounts": [
+    {
+      "mountPath": "demo-ephemeral",
+      "name": "demo-volume",
+      "readOnly": true
+    }
+  ]
+}

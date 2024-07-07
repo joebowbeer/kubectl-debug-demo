@@ -1,0 +1,49 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: node-express
+  labels:
+    app: node-express
+spec:
+  ports:
+  - port: 3000
+    protocol: TCP
+  clusterIP: None
+  selector:
+    app: node-express
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-express
+  labels:
+    app: node-express
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: node-express
+  template:
+    metadata:
+      labels:
+        app: node-express
+    spec:
+      containers:
+      - name: node-express
+        image: node-express
+        imagePullPolicy: IfNotPresent
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+        volumeMounts:
+        - mountPath: /demo
+          name: demo-volume
+      securityContext:
+        runAsNonRoot: true
+        seccompProfile:
+          type: RuntimeDefault
+      volumes:
+      - name: demo-volume
+        emptyDir: {}

@@ -1,0 +1,12 @@
+{
+  "securityContext": {
+    "runAsUser": 65534
+  },
+  "volumeMounts": [
+    {
+      "mountPath": "demo-ephemeral",
+      "name": "demo-volume",
+      "readOnly": true
+    }
+  ]
+}

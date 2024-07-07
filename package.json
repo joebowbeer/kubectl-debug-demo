@@ -1,0 +1,9 @@
+{
+  "name": "distroless-express",
+  "version": "1.0.0",
+  "description": "Adapted from GoogleContainerTools/distroless/examples/nodejs/node-express",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "license": "ISC"
+}

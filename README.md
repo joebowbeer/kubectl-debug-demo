@@ -1,6 +1,6 @@
 Demonstrates [kubectl custom debug profiles](https://github.com/kubernetes/enhancements/blob/master/keps/sig-cli/4292-kubectl-debug-custom-profile/README.md), which are *alpha* in kubectl 1.30.
 
-Demos:
+# Demos
 1. Custom [restricted](https://github.com/kubernetes/enhancements/blob/master/keps/sig-cli/1441-kubectl-debug/README.md#profile-restricted) profile
     * Run an ephemeral debug container in a PSS-restricted pod
     * The custom profile specifies a numeric user to satisfy the pod's `runAsNonRoot` restriction, and
@@ -13,7 +13,7 @@ Demos:
 
 The distroless node-express app was adapted from [distroless/examples/nodejs/node-express](https://github.com/GoogleContainerTools/distroless/tree/main/examples/nodejs/node-express)
 
-Instructions:
+# Instructions
 1. Create a local Kubernetes cluster, such as [Rancher Desktop](https://rancherdesktop.io/)
 1. Install [skaffold](https://skaffold.dev/docs/install/)
 1. Deploy the `node-express` app to the `default` namespace
